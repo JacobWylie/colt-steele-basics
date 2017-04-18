@@ -1,0 +1,33 @@
+body {
+	padding-bottom: 80px;
+}
+
+table {
+	margin-top: 30px;
+}
+
+table img {
+	height: 50px;
+}
+
+table a {
+	color: black;
+}
+
+table a:hover {
+	text-decoration: none;
+	color: grey;
+}
+
+.bg-faded {
+	background-color: rgb(119,168,191);
+}
+
+.sticky-top .navbar-brand {
+	font-size: 1.5rem;
+	letter-spacing: .15rem;
+}
+
+.fixed-bottom a {
+	font-size: .8rem;
+}
