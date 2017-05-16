@@ -1,7 +1,25 @@
+/***********************
+Universal styles
+************************/
 body {
 	padding-bottom: 80px;
 }
+.bg-faded {
+	background-color: rgb(119,168,191);
+}
 
+.sticky-top .navbar-brand {
+	font-size: 1.5rem;
+	letter-spacing: .15rem;
+}
+
+.fixed-bottom a {
+	font-size: .8rem;
+}
+
+/*********************
+Tables
+**********************/
 table {
 	margin-top: 30px;
 }
@@ -19,15 +37,78 @@ table a:hover {
 	color: grey;
 }
 
-.bg-faded {
-	background-color: rgb(119,168,191);
+/********************
+Selectors
+********************/
+
+#checkbox-3 {
+	background: yellow;
 }
 
-.sticky-top .navbar-brand {
-	font-size: 1.5rem;
-	letter-spacing: .15rem;
+input[name="todo"] {
+    display: none;
 }
 
-.fixed-bottom a {
-	font-size: .8rem;
+/*Elements*/
+li {
+
 }
+
+/*Class*/
+.hello {
+
+}
+
+/*Id*/
+#name {
+
+}
+
+/*Star*/
+
+
+/*Descendent Selector*/
+
+
+/*Adjacent Selector*/
+
+
+/*Attribute Selector*/
+
+
+/*nth of Type*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
