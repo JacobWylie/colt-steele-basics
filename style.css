@@ -37,48 +37,6 @@ table a:hover {
 	color: grey;
 }
 
-/********************
-Selectors
-********************/
-
-#checkbox-3 {
-	background: yellow;
-}
-
-input[name="todo"] {
-    display: none;
-}
-
-/*Elements*/
-li {
-
-}
-
-/*Class*/
-.hello {
-
-}
-
-/*Id*/
-#name {
-
-}
-
-/*Star*/
-
-
-/*Descendent Selector*/
-
-
-/*Adjacent Selector*/
-
-
-/*Attribute Selector*/
-
-
-/*nth of Type*/
-
-
 
 
 
