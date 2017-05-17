@@ -25,7 +25,7 @@ ul {
 }
 
 .padding {
-	padding-top: 50px;
+	padding-top: 30px;
 }
 
 /*********************
@@ -123,6 +123,13 @@ Box Model
 	border-top: 1px solid black;
 }
 
+/**********************
+photo-port
+**********************/
+#photo-title {
+	border-bottom: 3px solid #f1f1f1;
+	padding-bottom: 20px;
+}
 
 
 
