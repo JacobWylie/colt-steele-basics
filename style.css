@@ -72,6 +72,57 @@ h5 {
 	text-align: /* center, right */
 }
 
+/**********************
+Box Model
+**********************/
+#top-left {
+	padding: 50px;
+	border-right: 1px solid black;
+}
+
+#top-middle {
+	padding: 50px;
+	border-right: 1px solid black;
+}
+
+#top-right {
+	padding: 50px;
+}
+
+#middle-left {
+	padding: 50px;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#middle-middle {
+	padding: 50px;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#middle-right {
+	padding: 50px;
+	border-top: 1px solid black;
+}
+
+#bottom-left {
+	padding: 50px;
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+}
+
+#bottom-middle {
+	padding: 50px;
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+}
+
+#bottom-right {
+	padding: 50px;
+	border-top: 1px solid black;
+}
+
 
 
 
