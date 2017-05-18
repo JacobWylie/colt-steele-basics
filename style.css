@@ -28,6 +28,14 @@ ul {
 	padding-top: 30px;
 }
 
+@media (max-width:767px) {
+    .container {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 /*********************
 Tables
 **********************/
@@ -172,9 +180,27 @@ hr {
     background-image: linear-gradient(to right, rgba(189, 195, 199, 0), rgba(189, 195, 199, 0.75), rgba(189, 195, 199, 0));
 }
 
+/**********************
+Bootstrap Photo Album
+**********************/
+.jumbotron {
+	margin-top: 25px;
+	color: #2c3e50;
+	border-radius: 5px;
+}
 
+.fa-picture-o {
+	font-size: 1.75rem !important;
+	margin-right: -1px;
+}
 
+.photo-nav {
+	background-color: #2c3e50;
+}
 
+.navbar-toggler {
+	font-size: .85rem;
+}
 
 
 
