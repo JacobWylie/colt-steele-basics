@@ -173,7 +173,7 @@ blog
 	padding-bottom: 15px;
 }
 
-hr {
+.blog-hr {
     border: 0;
     height: 1px;
     margin-top: -10px;
@@ -213,9 +213,52 @@ Bootstrap Photo Album
 	font-size: .85rem;
 }
 
+/*********************
+Purrfect Match
+**********************/
+.cat-body {
+	background: url('https://images.unsplash.com/photo-1465411801898-f1a78de00afc') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+    font-family: 'Lato', sans-serif;
+}
 
+.cat-font-1 {
+	color: white;
+	font-weight: 700;
+	font-size: 5em;
+	margin-bottom: 20px;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
+}
 
+.cat-font-3 {
+	color: white;
+	margin-bottom: 20px;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
+}
 
+.bg-nav-cat {
+	background-color: #f7f7f7;
+}
+
+.cat-hr {
+	width: 450px;
+	background-color: white;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	margin-bottom: 30px;
+}
+
+.cat-content {
+	padding-top: 25%;
+}
 
 
 
