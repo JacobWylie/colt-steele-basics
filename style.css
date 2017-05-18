@@ -187,11 +187,22 @@ Bootstrap Photo Album
 	margin-top: 25px;
 	color: #2c3e50;
 	border-radius: 5px;
+	background-color: #ecf0f1;
+}
+
+.display-4,
+.lead
+{
+	font-weight: 500;
 }
 
 .fa-picture-o {
 	font-size: 1.75rem !important;
 	margin-right: -1px;
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+	color: white;
 }
 
 .photo-nav {
