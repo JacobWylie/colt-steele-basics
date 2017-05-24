@@ -2,7 +2,10 @@
 
 const logic = document.querySelector('.logic');
 const conditionals = document.querySelector('.conditionals');
+const guessingGame = document.querySelector('.guessingGame');
 
+
+// Logic
 logic.innerHTML = `
 					   const x = 10;
 					   <p>const y = 'a';</p>
@@ -21,22 +24,27 @@ logic.innerHTML = `
 					   <p>False!</p>
 				   `
 
+
+// Conditionals
 const getAge = () => {
 	const ageForm = document.querySelector('#ageInput');
 	const userAge = document.querySelector('#ageInput').value;
-	const ageLabel = document.querySelector('label[for="age"]');
+	const ageLabel = document.querySelector('label[for="ageInput"]');
 
 	if(isNaN(userAge)) {
 		ageLabel.innerHTML=`${userAge} is not a number (or is a word of a number but I'm working on that)!`;
 		ageForm.value='';
-	} else if(userAge < 18) {
-		ageLabel.innerHTML='Sorry, you are not old enough to enter';
-	} else if(userAge < 21) {
-		ageLabel.innerHTML='You can enter but NO DRINKS!';
-	} else if(userAge > 21) {
-		ageLabel.innerHTML='Come on in and drink buddy!';
-	} 
-}
+		} else if(userAge < 18) {
+			ageLabel.innerHTML='Sorry, you are not old enough to enter';
+			ageForm.value='';
+		} else if(userAge < 21) {
+			ageLabel.innerHTML='You can enter but NO DRINKS!';
+			ageForm.value='';
+		} else if(userAge > 21) {
+			ageLabel.innerHTML='Come on in and drink buddy!';
+			ageForm.value='';
+		2} 
+	}
 
 conditionals.innerHTML = `
 						  	<p>if(age < 18) {</p>
@@ -50,12 +58,55 @@ conditionals.innerHTML = `
 						  	<p style="margin-top:-17px;">}<p>
 						  	<form onkeypress="return event.keyCode != 13;">
   								<div class="form-group">
-    								<label for="age">Enter Your Age</label>
+    								<label for="ageInput">Enter Your Age</label>
     								<input type="text" class="form-control" id="ageInput" placeholder="Enter age">
     							</div>
     							<button type="button" onclick='getAge()' class="btn btn-secondary">Submit your Age</button>
     						</form>
 						 `
+
+
+// Guessing Game
+guessingGame.innerHTML = `
+						  	<h4 class="text-center" id="numberDisplay">I am thinking of a number between 1 and 10</h4>
+						  	<form onkeypress="return event.keyCode != 13;">
+  								<div class="form-group">
+    								<label for="guessNumber">Guess the number!</label>
+    								<input type="text" class="form-control" id="guessNumber" placeholder="Enter number">
+    							</div>
+    							<button type="button" onclick='guessTheNumber()' class="btn btn-secondary">Submit your guess</button>
+    						</form>
+			   			 `
+
+
+const gameText = document.createElement("h5");
+const randomNumber = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+
+const guessTheNumber = () => {
+	const numberDisplay = document.querySelector('#numberDisplay');
+	const guessForm = document.querySelector('#guessNumber');
+	const guessNumber = document.querySelector('#guessNumber').value;
+
+	if (isNaN(guessNumber)) {
+		gameText.innerHTML=`${guessNumber} is not a number (or is a word of a number but I'm working on that)!`;
+		guessForm.value='';
+	} else if(guessNumber < randomNumber) {
+		gameText.innerHTML=`${guessNumber} is too low. Try Again`;
+		guessForm.value='';
+	} else if (guessNumber > randomNumber) {
+		gameText.innerHTML=`${guessNumber} is too high. Try Again`;
+		guessForm.value='';
+	} else {
+		gameText.innerHTML=`${guessNumber} is right!`;
+		guessForm.value='';
+	}
+
+	gameText.classList.add("text-center", "mt-3")
+	guessingGame.appendChild(gameText);
+}
+
+
+
 
 
 
