@@ -74,13 +74,18 @@ guessingGame.innerHTML = `
     								<label for="guessNumber">Guess the number!</label>
     								<input type="text" class="form-control" id="guessNumber" placeholder="Enter number">
     							</div>
-    							<button type="button" onclick='guessTheNumber()' class="btn btn-secondary">Submit your guess</button>
+    							<div class="numberDiv">
+    								<button type="button" onclick='guessTheNumber()' id="numberButton" class="btn btn-secondary">Submit your guess</button>
+    							</div>
     						</form>
 			   			 `
 
 
 const gameText = document.createElement("h5");
 const randomNumber = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+const numberDiv = document.querySelector('.numberDiv');
+const numberButton = document.querySelector("#numberButton");
+const refreshPage = () => window.location.reload();
 
 const guessTheNumber = () => {
 	const numberDisplay = document.querySelector('#numberDisplay');
@@ -99,9 +104,13 @@ const guessTheNumber = () => {
 	} else {
 		gameText.innerHTML=`${guessNumber} is right!`;
 		guessForm.value='';
+		numberDiv.removeChild(numberButton);
+		restartButton.classList.add('btn','btn-success');
+		restartButton.innerHTML = "Replay";
+		restartButton.onClick = refreshPage();
 	}
 
-	gameText.classList.add("text-center", "mt-3")
+	gameText.classList.add("text-center","mt-3")
 	guessingGame.appendChild(gameText);
 }
 
