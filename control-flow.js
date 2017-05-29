@@ -1,9 +1,7 @@
-"use-strict"
-
 const logic = document.querySelector('.logic');
 const conditionals = document.querySelector('.conditionals');
 const guessingGame = document.querySelector('.guessingGame');
-
+const loopText = document.querySelector('.loops');
 
 // Logic
 logic.innerHTML = `
@@ -85,7 +83,6 @@ const gameText = document.createElement("h5");
 const randomNumber = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 const numberDiv = document.querySelector('.numberDiv');
 const numberButton = document.querySelector("#numberButton");
-const refreshPage = () => window.location.reload();
 
 const guessTheNumber = () => {
 	const numberDisplay = document.querySelector('#numberDisplay');
@@ -116,9 +113,32 @@ const guessTheNumber = () => {
 }
 
 
+// LOOPS
+loopText.innerHTML = `<h4 class="text-center">Enter a number to print loop</h4>
+						  	<form onkeypress="return event.keyCode != 13;">
+  								<div class="form-group">
+    								<label for="whileLoop">Enter a Number</label>
+    								<input type="text" class="form-control" id="whileLoop" placeholder="Enter number">
+    							</div>
+    							<div class="numberDiv">
+    								<button type="button" onclick="whileLoop()" class="btn btn-secondary">Submit your number</button>
+    							</div>
+    						</form>
+    						<br>
+    				  `
+let loopPrint = document.createElement('p');
+let userWhileNumber = document.querySelector('#whileLoop').value;
 
+const whileLoop = () => {
+	let count = 0;
+	while(count < userWhileNumber) {
+		loopPrint.innerHTML += count;
+		loopText.appendChild(loopPrint);
+		count++;
+	};
+}
 
-
+ 
 
 
 
