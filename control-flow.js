@@ -114,7 +114,7 @@ const guessTheNumber = () => {
 
 
 // LOOPS
-loopText.innerHTML = `<h4 class="text-center">Enter a number to print loop</h4>
+loopText.innerHTML = `<h4 class="text-center">Enter a number to print loop (only working in console at the momemt)</h4>
 						  	<form onkeypress="return event.keyCode != 13;">
   								<div class="form-group">
     								<label for="whileLoop">Enter a Number</label>
@@ -137,6 +137,8 @@ const whileLoop = () => {
 		count++;
 	};
 }
+
+
 
  
 
