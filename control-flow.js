@@ -91,6 +91,7 @@ const guessTheNumber = () => {
 	const numberDisplay = document.querySelector('#numberDisplay');
 	const guessForm = document.querySelector('#guessNumber');
 	const guessNumber = document.querySelector('#guessNumber').value;
+	const restartButton = document.createElement("button");
 
 	if (isNaN(guessNumber)) {
 		gameText.innerHTML=`${guessNumber} is not a number (or is a word of a number but I'm working on that)!`;
@@ -105,9 +106,9 @@ const guessTheNumber = () => {
 		gameText.innerHTML=`${guessNumber} is right!`;
 		guessForm.value='';
 		numberDiv.removeChild(numberButton);
+		numberDiv.appendChild(restartButton);
 		restartButton.classList.add('btn','btn-success');
 		restartButton.innerHTML = "Replay";
-		restartButton.onClick = refreshPage();
 	}
 
 	gameText.classList.add("text-center","mt-3")
