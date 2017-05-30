@@ -60,7 +60,8 @@ const problemFive = document.querySelector('.five');
 
 const annoyomatic = () => {
 	let userInput = prompt("Are we there yet?").toLowerCase();
-	if (userInput === 'yeah' || userInput === 'yes') {
+	// if (userInput.includes('yeah') || userInput.includes('yes')) {
+	if (userInput.indexOf('yeah') >= 0 || userInput.indexOf('yes') >= 0) { 
 		let iDiv = document.createElement('h5')
 		iDiv.innerHTML = `<br>Yay, we finally made it!`;
     	problemFive.appendChild(iDiv);
