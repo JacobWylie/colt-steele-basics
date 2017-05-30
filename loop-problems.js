@@ -61,7 +61,7 @@ const problemFive = document.querySelector('.five');
 const annoyomatic = () => {
 	let userInput = prompt("Are we there yet?").toLowerCase();
 	// if (userInput.includes('yeah') || userInput.includes('yes')) {
-	if (userInput.indexOf('yeah') >= 0 || userInput.indexOf('yes') >= 0) { 
+	if (userInput.indexOf('yeah') > -1 || userInput.indexOf('yes') > -1) { 
 		let iDiv = document.createElement('h5')
 		iDiv.innerHTML = `<br>Yay, we finally made it!`;
     	problemFive.appendChild(iDiv);
@@ -69,6 +69,27 @@ const annoyomatic = () => {
 		annoyomatic();
 	}
 }
+
+///////////////////////
+// PROBLEM SIX
+///////////////////////
+const problemSix = document.querySelector('.six');
+
+const textShine = () => {
+	let loopText = document.querySelector('#loopText').value.replace(/\s/g, '');
+	for(i=0;i<loopText.length;i++) {
+		let iDiv = document.createElement('button');
+	    iDiv.classList.add("btn", "btn-sm", "shiners");
+	    iDiv.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);
+	    iDiv.style.color = '#'+Math.random().toString(16).substr(-6);
+	    iDiv.innerHTML = `${loopText[i]}  `;
+	    problemSix.appendChild(iDiv); 
+	}
+}
+
+
+
+
 
 
 
