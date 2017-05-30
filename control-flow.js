@@ -139,8 +139,61 @@ const whileLoop = () => {
 }
 
 
+// FIZZBUZZ
+const fizzDiv = document.querySelector('.fizzbuzz');
+
+fizzDiv.innerHTML = `
+						<h4 class="text-center">My FizzBuzz</h4>
+					`
+
+const fizzbuzz = i => {
+	if(i%15===0) {
+		return "FizzBuzz";
+	}
+	if(i%3===0) {
+		return "Fizz";
+	}
+	if(i%5===0) {
+		return "Buzz";
+	}
+	return i.toString();
+}
+
+for(i=1;i<=200;i++) {
+	let myFizz = document.createElement('button');
+	myFizz.classList.add("btn", "btn-sm");
+	myFizz.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);
+	myFizz.style.color = '#'+Math.random().toString(16).substr(-6);
+	myFizz.innerHTML=fizzbuzz(i);
+	fizzDiv.appendChild(myFizz);
+}
+
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
