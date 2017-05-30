@@ -79,7 +79,7 @@ const textShine = () => {
 	let loopText = document.querySelector('#loopText').value.replace(/\s/g, '');
 	for(i=0;i<loopText.length;i++) {
 		let iDiv = document.createElement('button');
-	    iDiv.classList.add("btn", "btn-sm", "shiners");
+	    iDiv.classList.add("btn", "btn-sm");
 	    iDiv.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);
 	    iDiv.style.color = '#'+Math.random().toString(16).substr(-6);
 	    iDiv.innerHTML = `${loopText[i]}  `;
