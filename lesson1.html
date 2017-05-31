@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">const</span> isEven <span style="color: #666666">=</span> num <span style="color: #666666">=&gt;</span> num <span style="color: #666666">%</span> <span style="color: #666666">2</span> <span style="color: #666666">===</span> <span style="color: #666666">0</span>;
+<span style="color: #008000; font-weight: bold">const</span> printEven <span style="color: #666666">=</span> num <span style="color: #666666">=&gt;</span> console.log(isEven(num));
+printEven(<span style="color: #666666">4</span>);
+printEven(<span style="color: #666666">21</span>);
+printEven(<span style="color: #666666">68</span>);
+printEven(<span style="color: #666666">333</span>);
+
+<span style="color: #008000; font-weight: bold">const</span> factorial <span style="color: #666666">=</span> num <span style="color: #666666">=&gt;</span> {
+	<span style="color: #008000; font-weight: bold">if</span>(num <span style="color: #666666">===</span> <span style="color: #666666">0</span>) {
+		<span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">1</span>;
+	}
+	<span style="color: #008000; font-weight: bold">return</span> num <span style="color: #666666">*</span> factorial(num<span style="color: #666666">-1</span>)
+}
+<span style="color: #008000; font-weight: bold">const</span> printFact <span style="color: #666666">=</span> (num) <span style="color: #666666">=&gt;</span> console.log(factorial(num));
+printFact(<span style="color: #666666">5</span>);
+printFact(<span style="color: #666666">2</span>);
+printFact(<span style="color: #666666">10</span>);
+printFact(<span style="color: #666666">0</span>);
+
+<span style="color: #008000; font-weight: bold">const</span> kebabToSnake <span style="color: #666666">=</span> (str) <span style="color: #666666">=&gt;</span> str.replace(<span style="color: #BB6688">/-/g</span>, <span style="color: #BA2121">&quot;_&quot;</span>);
+<span style="color: #008000; font-weight: bold">const</span> printKebab <span style="color: #666666">=</span> (kebab) <span style="color: #666666">=&gt;</span> console.log(kebabToSnake(kebab))
+printKebab(<span style="color: #BA2121">&quot;hello-world&quot;</span>);
+printKebab(<span style="color: #BA2121">&quot;dogs-are-awesome&quot;</span>);
+printKebab(<span style="color: #BA2121">&quot;blah&quot;</span>);
+</pre></td></tr></table></div>
+
+</body>
+</html>

@@ -23,6 +23,8 @@ printKebab("hello-world");
 printKebab("dogs-are-awesome");
 printKebab("blah");
 
+const sing = () => console.log('twinkle twinkle...');
+setInterval(()=> console.log('happy days'), 500);
 
 
 
