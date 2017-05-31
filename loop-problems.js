@@ -30,13 +30,15 @@ for (i=10;i<=40;i+=1) {
 // PROBLEM THREE
 ///////////////////////
 const problemThree = document.querySelector('.three');
-for (i=333;i>=300;i-=2) {
-  let iDiv = document.createElement('button');
-  iDiv.classList.add("btn", "btn-sm");
-  iDiv.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);
-  iDiv.style.color = '#'+Math.random().toString(16).substr(-6);
-  iDiv.innerHTML = `${i}  `;
-  problemThree.appendChild(iDiv);
+for (i=300;i<=333;i++) {
+	if(i%2!==0) {
+		let iDiv = document.createElement('button');
+		iDiv.classList.add("btn", "btn-sm");
+		iDiv.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);
+		iDiv.style.color = '#'+Math.random().toString(16).substr(-6);
+		iDiv.innerHTML = `${i}  `;
+		problemThree.appendChild(iDiv);
+	}
 }
 
 ///////////////////////
