@@ -17,7 +17,7 @@ printFact(2);
 printFact(10);
 printFact(0);
 
-const kebabToSnake = (str) => str.replace (/\-/g, "_");
+const kebabToSnake = (str) => str.replace(/-/g, "_");
 const printKebab = (kebab) => console.log(kebabToSnake(kebab))
 printKebab("hello-world");
 printKebab("dogs-are-awesome");
