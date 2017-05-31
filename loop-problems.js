@@ -15,13 +15,15 @@ for (i=-10;i<=19;i++) {
 // PROBLEM TWO
 ///////////////////////
 const problemTwo = document.querySelector('.two');
-for (i=10;i<=40;i+=2) {
-  let iDiv = document.createElement('button');
-  iDiv.classList.add("btn", "btn-sm");
-  iDiv.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);
-  iDiv.style.color = '#'+Math.random().toString(16).substr(-6);
-  iDiv.innerHTML = `${i}  `;
-  problemTwo.appendChild(iDiv);
+for (i=10;i<=40;i+=1) {
+	if(i%2===0) {
+		let iDiv = document.createElement('button');
+		iDiv.classList.add("btn", "btn-sm");
+		iDiv.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);
+		iDiv.style.color = '#'+Math.random().toString(16).substr(-6);
+		iDiv.innerHTML = `${i}  `;
+		problemTwo.appendChild(iDiv);
+	}
 }
 
 ///////////////////////
