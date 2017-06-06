@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">let</span> movieDB <span style="color: #666666">=</span> [
+	{
+		title<span style="color: #666666">:</span> <span style="color: #BA2121">&quot;In Bruges&quot;</span>,
+		rating<span style="color: #666666">:</span> <span style="color: #BA2121">&quot;5 Stars&quot;</span>,
+		hasWatched<span style="color: #666666">:</span> <span style="color: #008000; font-weight: bold">true</span>
+	},
+	{
+		title<span style="color: #666666">:</span> <span style="color: #BA2121">&quot;Frozen&quot;</span>,
+		rating<span style="color: #666666">:</span> <span style="color: #BA2121">&quot;4.5 Stars&quot;</span>,
+		hasWatched<span style="color: #666666">:</span> <span style="color: #008000; font-weight: bold">false</span>
+	},
+	{
+		title<span style="color: #666666">:</span> <span style="color: #BA2121">&quot;Mad Max&quot;</span>,
+		rating<span style="color: #666666">:</span> <span style="color: #BA2121">&quot;5 Stars&quot;</span>,
+		hasWatched<span style="color: #666666">:</span> <span style="color: #008000; font-weight: bold">true</span>
+	},
+	{
+		title<span style="color: #666666">:</span> <span style="color: #BA2121">&quot;Les Miserables&quot;</span>,
+		rating<span style="color: #666666">:</span> <span style="color: #BA2121">&quot;3.5 Stars&quot;</span>,
+		hasWatched<span style="color: #666666">:</span> <span style="color: #008000; font-weight: bold">false</span>
+	},	
+]
+
+<span style="color: #008000; font-weight: bold">const</span> printMovie <span style="color: #666666">=</span> (movieDB) <span style="color: #666666">=&gt;</span> {
+	<span style="color: #008000; font-weight: bold">let</span> watched <span style="color: #666666">=</span> <span style="color: #BA2121">&quot; not&quot;</span>;
+	<span style="color: #008000; font-weight: bold">if</span>(movieDB.hasWatched) {
+		watched <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;</span>;
+	}
+	console.log(<span style="border: 1px solid #FF0000">`</span>You have${watched} seen <span style="color: #BA2121">&quot;${movieDB.title}&quot;</span> <span style="color: #666666">-</span> ${movieDB.rating}<span style="border: 1px solid #FF0000">`</span>)
+}
+
+<span style="color: #408080; font-style: italic">// for(i = 0; i &lt; movieDB.length; i++) {</span>
+<span style="color: #408080; font-style: italic">// 	printMovie();</span>
+<span style="color: #408080; font-style: italic">// }</span>
+
+movieDB.forEach(printMovie);
+</pre></td></tr></table></div>
+
+</body>
+</html>
