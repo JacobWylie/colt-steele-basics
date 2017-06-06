@@ -1,14 +1,36 @@
-const fizzbuzz = (i) => {
-	if(i % 15 === 0) {
-		return "FizzBuzz";
-	} else if (i % 5 === 0) {
-		return "Buzz";
-	} else if (i % 3 === 0 ) {
-		return "Fizz";
+somObject.friends[0].name
+
+let movieDB = [
+	{
+		title: "In Bruges",
+		rating: "5 Stars",
+		hasWatched: true
+	},
+	{
+		title: "Frozen",
+		rating: "4.5 Stars",
+		hasWatched: false
+	},
+	{
+		title: "Mad Max",
+		rating: "5 Stars",
+		hasWatched: true
+	},
+	{
+		title: "Les Miserables",
+		rating: "3.5 Stars",
+		hasWatched: false
+	},	
+]
+
+const printMovie = () => {
+	if(movieDB[i].hasWatched === true) {
+		console.log(`I have seen ${movieDB[i].title} - ${movieDB[i].rating}`);
+	} else {
+		console.log(`I have not seen ${movieDB[i].title} - ${movieDB[i].rating}`);
 	}
-	return i.toString();
 }
 
-for(i = 0; i <= 50; i++) {
-	console.log(fizzbuzz(i));
+for(i = 0; i < movieDB.length; i++) {
+	printMovie();
 }
