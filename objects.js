@@ -23,14 +23,16 @@ let movieDB = [
 	},	
 ]
 
-const printMovie = () => {
-	if(movieDB[i].hasWatched === true) {
-		console.log(`I have seen ${movieDB[i].title} - ${movieDB[i].rating}`);
-	} else {
-		console.log(`I have not seen ${movieDB[i].title} - ${movieDB[i].rating}`);
+const printMovie = (movieDB) => {
+	let watched = " not";
+	if(movieDB.hasWatched) {
+		watched = "";
 	}
+	console.log(`You have${watched} seen "${movieDB.title}" - ${movieDB.rating}`)
 }
 
-for(i = 0; i < movieDB.length; i++) {
-	printMovie();
-}
+// for(i = 0; i < movieDB.length; i++) {
+// 	printMovie();
+// }
+
+movieDB.forEach(printMovie);
