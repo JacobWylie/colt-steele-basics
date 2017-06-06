@@ -8,7 +8,7 @@
 	<h1>Hello (click)</h1>
 	<h2>Goodbye (mousemove)</h2>
 	<ul>
-		<li id="highlight">List Item 1 (mouseover)</li>
+		<li><img id="highlight" src="http://adsoftheworld.com/sites/default/files/rss-social-icon-58.png">List Item 1 (mouseover)</li>
 		<li class="bolded">List Item 2 (click)</li>
 		<li class="bolded">List Item 3 (click)</li>
 	</ul> 
@@ -39,25 +39,43 @@
 23
 24
 25
-26</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">const</span> h1 <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;h1&#39;</span>);
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">const</span> h1 <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;h1&#39;</span>);
 <span style="color: #008000; font-weight: bold">const</span> h2 <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;h2&#39;</span>);
 <span style="color: #008000; font-weight: bold">const</span> highlight <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;#highlight&#39;</span>);
 <span style="color: #008000; font-weight: bold">const</span> bold <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelectorAll(<span style="color: #BA2121">&#39;.bolded&#39;</span>);
 
 h1.addEventListener(<span style="color: #BA2121">&#39;mouseover&#39;</span>, () <span style="color: #666666">=&gt;</span> h1.style.cursor <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;help&#39;</span>);
-h1.addEventListener(<span style="color: #BA2121">&#39;click&#39;</span>, () <span style="color: #666666">=&gt;</span> {
-	<span style="color: #008000">window</span>.location <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;http://www.google.com&#39;</span>;
-})
+h1.addEventListener(<span style="color: #BA2121">&#39;click&#39;</span>, () <span style="color: #666666">=&gt;</span> h1.innerHTML <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;Sweet&#39;</span>)
 
 <span style="color: #008000">window</span>.addEventListener(<span style="color: #BA2121">&#39;mousemove&#39;</span>, () <span style="color: #666666">=&gt;</span> {
 	h2.style.color <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;#&#39;</span><span style="color: #666666">+</span><span style="color: #008000">Math</span>.random().toString(<span style="color: #666666">16</span>).substr(<span style="color: #666666">-6</span>);
 	<span style="color: #008000">document</span>.body.style.cursor <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;crosshair&#39;</span>;
 })
 
-highlight.addEventListener(<span style="color: #BA2121">&#39;mouseover&#39;</span>, () <span style="color: #666666">=&gt;</span> highlight.classList.toggle(<span style="color: #BA2121">&#39;highlighter&#39;</span>));
+highlight.addEventListener(<span style="color: #BA2121">&#39;mouseenter&#39;</span>, () <span style="color: #666666">=&gt;</span> highlight.setAttribute(<span style="color: #BA2121">&#39;src&#39;</span>, <span style="color: #BA2121">&#39;https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/512px-Unofficial_JavaScript_logo_2.svg.png&#39;</span>));
+<span style="color: #008000; font-weight: bold">const</span> logo <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;#logo&#39;</span>);
+highlight.addEventListener(<span style="color: #BA2121">&#39;mouseout&#39;</span>, () <span style="color: #666666">=&gt;</span> highlight.setAttribute(<span style="color: #BA2121">&#39;src&#39;</span>, <span style="color: #BA2121">&#39;https://www.brandsoftheworld.com/sites/default/files/styles/logo-original-577x577/public/082014/js1_0.png?itok=zdiqYk3L&#39;</span>));
+
+
 
 bold.forEach( (bold) <span style="color: #666666">=&gt;</span> {
-	bold.addEventListener(<span style="color: #BA2121">&#39;click&#39;</span>, (e) <span style="color: #666666">=&gt;</span> bold.classList.toggle(<span style="color: #BA2121">&#39;boldest&#39;</span>));
+	bold.addEventListener(<span style="color: #BA2121">&#39;click&#39;</span>, (e) <span style="color: #666666">=&gt;</span> {
+		bold.classList.toggle(<span style="color: #BA2121">&#39;boldest&#39;</span>)
+		<span style="color: #008000; font-weight: bold">if</span> (bold.textContent <span style="color: #666666">===</span> <span style="color: #BA2121">&quot;Thanks for Clicking Me!&quot;</span>) {
+			bold.textContent <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Click Me Again!&quot;</span>;
+		} <span style="color: #008000; font-weight: bold">else</span> {
+			bold.textContent <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Thanks for Clicking Me!&quot;</span>;
+		}
+	});
 		<span style="color: #408080; font-style: italic">// if( bold.classList.contains(&#39;boldest&#39;)) {</span>
 		<span style="color: #408080; font-style: italic">// 	bold.classList.remove(&#39;boldest&#39;);</span>
 		<span style="color: #408080; font-style: italic">// } else {</span>
@@ -66,6 +84,7 @@ bold.forEach( (bold) <span style="color: #666666">=&gt;</span> {
 	bold.addEventListener(<span style="color: #BA2121">&#39;mouseover&#39;</span>, () <span style="color: #666666">=&gt;</span> bold.style.cursor <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;progress&#39;</span>);
 })
 </pre></td></tr></table></div>
+
 
 
 
