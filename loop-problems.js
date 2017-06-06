@@ -84,8 +84,10 @@ const textShine = () => {
 	for(i=0;i<loopText.length;i++) {
 		let iDiv = document.createElement('button');
 	    iDiv.classList.add("btn", "btn-sm");
-	    iDiv.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);
-	    iDiv.style.color = '#'+Math.random().toString(16).substr(-6);
+	    setInterval( () => {
+	    	iDiv.style.backgroundColor = '#'+Math.random().toString(16).substr(-6);
+	    	iDiv.style.color = '#'+Math.random().toString(16).substr(-6);
+	    }, 300);
 	    iDiv.innerHTML = `${loopText[i]}  `;
 	    problemSix.appendChild(iDiv); 
 	}
