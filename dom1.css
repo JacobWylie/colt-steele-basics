@@ -1,0 +1,7 @@
+.boldest {
+	font-size: 50px;
+	font-weight: bold;
+	border: 5px orange solid;
+	color: blue;
+	background-color: red;
+}

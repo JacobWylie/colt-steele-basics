@@ -18,10 +18,10 @@ highlight.addEventListener('mouseout', () => highlight.style.color = 'black');
 
 bold.forEach( (bold) => {
 	bold.addEventListener('click', (e) => {
-		if( bold.style.fontWeight === 'bold' ) {
-			bold.style.fontWeight = 'normal';
+		if( bold.classList.contains('boldest')) {
+			bold.classList.remove('boldest');
 		} else {
-			bold.style.fontWeight = 'bold';
+			bold.classList.add('boldest');
 		}
 	})
 	bold.addEventListener('mouseover', () => bold.style.cursor = 'progress');
