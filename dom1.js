@@ -33,3 +33,13 @@ bold.forEach( (bold) => {
 		// }
 	bold.addEventListener('mouseover', () => bold.style.cursor = 'progress');
 })
+
+
+
+
+
+
+
+
+
+
