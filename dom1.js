@@ -17,21 +17,26 @@ highlight.addEventListener('mouseout', () => highlight.setAttribute('src', 'http
 
 
 
-bold.forEach( (bold) => {
-	bold.addEventListener('click', (e) => {
-		bold.classList.toggle('boldest')
-		if (bold.textContent === "Thanks for Clicking Me!") {
-			bold.textContent = "Click Me Again!";
+
+function changeText() {
+		this.classList.toggle('boldest')
+		if (this.textContent === "Thanks for Clicking Me!") {
+			this.textContent = "Click Me Again!";
 		} else {
-			bold.textContent = "Thanks for Clicking Me!";
+			this.textContent = "Thanks for Clicking Me!";
 		}
-	});
+}
+
+bold.forEach( function(bold) {
+	bold.addEventListener('click', changeText);
 		// if( bold.classList.contains('boldest')) {
 		// 	bold.classList.remove('boldest');
 		// } else {
 		// 	bold.classList.add('boldest');
 		// }
-	bold.addEventListener('mouseover', () => bold.style.cursor = 'progress');
+	bold.addEventListener('mouseover', function() {
+		this.style.cursor = 'progress'
+	})
 })
 
 

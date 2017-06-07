@@ -48,7 +48,12 @@
 32
 33
 34
-35</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">const</span> h1 <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;h1&#39;</span>);
+35
+36
+37
+38
+39
+40</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">const</span> h1 <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;h1&#39;</span>);
 <span style="color: #008000; font-weight: bold">const</span> h2 <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;h2&#39;</span>);
 <span style="color: #008000; font-weight: bold">const</span> highlight <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;#highlight&#39;</span>);
 <span style="color: #008000; font-weight: bold">const</span> bold <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelectorAll(<span style="color: #BA2121">&#39;.bolded&#39;</span>);
@@ -67,23 +72,29 @@ highlight.addEventListener(<span style="color: #BA2121">&#39;mouseout&#39;</span
 
 
 
-bold.forEach( (bold) <span style="color: #666666">=&gt;</span> {
-	bold.addEventListener(<span style="color: #BA2121">&#39;click&#39;</span>, (e) <span style="color: #666666">=&gt;</span> {
-		bold.classList.toggle(<span style="color: #BA2121">&#39;boldest&#39;</span>)
-		<span style="color: #008000; font-weight: bold">if</span> (bold.textContent <span style="color: #666666">===</span> <span style="color: #BA2121">&quot;Thanks for Clicking Me!&quot;</span>) {
-			bold.textContent <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Click Me Again!&quot;</span>;
+
+<span style="color: #008000; font-weight: bold">function</span> changeText() {
+		<span style="color: #008000; font-weight: bold">this</span>.classList.toggle(<span style="color: #BA2121">&#39;boldest&#39;</span>)
+		<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000; font-weight: bold">this</span>.textContent <span style="color: #666666">===</span> <span style="color: #BA2121">&quot;Thanks for Clicking Me!&quot;</span>) {
+			<span style="color: #008000; font-weight: bold">this</span>.textContent <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Click Me Again!&quot;</span>;
 		} <span style="color: #008000; font-weight: bold">else</span> {
-			bold.textContent <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Thanks for Clicking Me!&quot;</span>;
+			<span style="color: #008000; font-weight: bold">this</span>.textContent <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Thanks for Clicking Me!&quot;</span>;
 		}
-	});
+}
+
+bold.forEach( <span style="color: #008000; font-weight: bold">function</span>(bold) {
+	bold.addEventListener(<span style="color: #BA2121">&#39;click&#39;</span>, changeText);
 		<span style="color: #408080; font-style: italic">// if( bold.classList.contains(&#39;boldest&#39;)) {</span>
 		<span style="color: #408080; font-style: italic">// 	bold.classList.remove(&#39;boldest&#39;);</span>
 		<span style="color: #408080; font-style: italic">// } else {</span>
 		<span style="color: #408080; font-style: italic">// 	bold.classList.add(&#39;boldest&#39;);</span>
 		<span style="color: #408080; font-style: italic">// }</span>
-	bold.addEventListener(<span style="color: #BA2121">&#39;mouseover&#39;</span>, () <span style="color: #666666">=&gt;</span> bold.style.cursor <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;progress&#39;</span>);
+	bold.addEventListener(<span style="color: #BA2121">&#39;mouseover&#39;</span>, <span style="color: #008000; font-weight: bold">function</span>() {
+		<span style="color: #008000; font-weight: bold">this</span>.style.cursor <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;progress&#39;</span>
+	})
 })
 </pre></td></tr></table></div>
+
 
 
 
