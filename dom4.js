@@ -9,8 +9,6 @@ const playerOneButton = document.querySelector('#playerOneButton');
 const playerTwoButton = document.querySelector('#playerTwoButton');
 const resetButton = document.querySelector('#resetButton');
 
-
-
 playerOneButton.addEventListener('click', () => {
 	if (playerOneCounter < scoreLimit.value) {
 		playerOneCounter++;
@@ -22,13 +20,21 @@ playerTwoButton.addEventListener('click', () => {
 	if (playerTwoCounter < scoreLimit.value) {
 		playerTwoCounter++;
 		playerTwoScore.innerHTML = playerTwoCounter;
-	} 
+	}
 })
 
-if (scoreLimit.value >= 1) {
-	if (playerOneScore == scoreLimitDisplay) {
+if (scoreLimit.value >= 1 && playerOneCounter == scoreLimit.value) {
 		playerOneScore.style.color = 'green';
-	}
+		winnerBanner.innerHTML = "Player One Wins!";
+		playerOneButton.disabled = true;
+		playerTwoButton.disabled = true;
+}
+
+if (scoreLimit.value >= 1 && playerTwoCounter == scoreLimit.value) {
+		playerTwoScore.style.color = 'green';
+		winnerBanner.innerHTML = "Player Two Wins!";
+		playerOneButton.disabled = true;
+		playerTwoButton.disabled = true;
 }
 
 resetButton.addEventListener('click', () => {
@@ -36,6 +42,9 @@ resetButton.addEventListener('click', () => {
 	playerTwoCounter = 0;
 	playerOneScore.innerHTML = playerOneCounter;
 	playerTwoScore.innerHTML = playerTwoCounter;
+	winnerBanner.innerHTML = '';
+	playerOneScore.style.color = 'black';
+	playerTwoScore.style.color = 'black';
 })
 
 scoreLimit.addEventListener('input', () => {
