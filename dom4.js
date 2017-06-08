@@ -25,6 +25,12 @@ playerTwoButton.addEventListener('click', () => {
 	} 
 })
 
+if (scoreLimit.value >= 1) {
+	if (playerOneScore == scoreLimitDisplay) {
+		playerOneScore.style.color = 'green';
+	}
+}
+
 resetButton.addEventListener('click', () => {
 	playerOneCounter = 0; 
 	playerTwoCounter = 0;
