@@ -13,6 +13,9 @@ playerOneButton.addEventListener('click', () => {
 	if (playerOneCounter < scoreLimit.value) {
 		playerOneCounter++;
 		playerOneScore.innerHTML = playerOneCounter;
+		if (scoreLimit.value >= 1 && playerOneCounter == scoreLimit.value) {
+			playerOneWins(playerOneCounter);
+		}
 	}
 })
 
@@ -20,18 +23,21 @@ playerTwoButton.addEventListener('click', () => {
 	if (playerTwoCounter < scoreLimit.value) {
 		playerTwoCounter++;
 		playerTwoScore.innerHTML = playerTwoCounter;
+		if (scoreLimit.value >= 1 && playerTwoCounter == scoreLimit.value) {
+			playerTwoWins(playerTwoCounter);
+		}
 	}
 })
 
-if (scoreLimit.value >= 1 && playerOneCounter == scoreLimit.value) {
+const playerOneWins = playerOneCounter => {
 		playerOneScore.style.color = 'green';
 		winnerBanner.innerHTML = "Player One Wins!";
 		playerOneButton.disabled = true;
 		playerTwoButton.disabled = true;
 }
 
-if (scoreLimit.value >= 1 && playerTwoCounter == scoreLimit.value) {
-		playerTwoScore.style.color = 'green';
+const playerTwoWins = playerTwoCounter => {
+		playerOneScore.style.color = 'green';
 		winnerBanner.innerHTML = "Player Two Wins!";
 		playerOneButton.disabled = true;
 		playerTwoButton.disabled = true;
@@ -45,6 +51,8 @@ resetButton.addEventListener('click', () => {
 	winnerBanner.innerHTML = '';
 	playerOneScore.style.color = 'black';
 	playerTwoScore.style.color = 'black';
+	playerOneButton.disabled = false;
+	playerTwoButton.disabled = false;
 })
 
 scoreLimit.addEventListener('input', () => {
