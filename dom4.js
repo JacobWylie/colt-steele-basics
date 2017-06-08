@@ -32,13 +32,19 @@ playerTwoButton.addEventListener('click', () => {
 const playerOneWins = playerOneCounter => {
 		playerOneScore.style.color = 'green';
 		winnerBanner.innerHTML = "Player One Wins!";
+		setInterval( () => {
+	    	winnerBanner.style.color = '#'+Math.random().toString(16).substr(-6);
+	    }, 300);
 		playerOneButton.disabled = true;
 		playerTwoButton.disabled = true;
 }
 
 const playerTwoWins = playerTwoCounter => {
-		playerOneScore.style.color = 'green';
+		playerTwoScore.style.color = 'green';
 		winnerBanner.innerHTML = "Player Two Wins!";
+		setInterval( () => {
+	    	winnerBanner.style.color = '#'+Math.random().toString(16).substr(-6);
+	    }, 300);
 		playerOneButton.disabled = true;
 		playerTwoButton.disabled = true;
 }
