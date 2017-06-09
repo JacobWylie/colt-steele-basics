@@ -1,0 +1,40 @@
+body {
+  font-size: 20px;
+  font-family: 'Helvetica';
+  padding: 30px;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  padding-left: 2em;
+  text-indent: -1em;
+  cursor: crosshair;
+}
+
+li:before {
+  content: "x";
+  padding-right: 8px;
+}
+
+.mouseOver {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.strikeout {
+  text-decoration: line-through;
+  font-style: italic;
+  opacity: 0.5;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.strikeout:before {
+  content: "";
+  padding-right: 15px;
+}
