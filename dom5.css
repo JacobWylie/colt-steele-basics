@@ -4,21 +4,35 @@ body {
   padding: 30px;
 }
 
+input {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  margin-left: 90px;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+  padding: 8px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-left: 90px;
+}
+
 ul {
   list-style: none;
-  margin-left: 0;
-  padding-left: 0;
+  margin-left: 50px;
 }
 
 li {
-  padding-left: 2em;
-  text-indent: -1em;
+  padding: 3px;
   cursor: crosshair;
-}
-
-li:before {
-  content: "x";
-  padding-right: 8px;
 }
 
 .mouseOver {
@@ -32,9 +46,4 @@ li:before {
   opacity: 0.5;
   font-size: 20px;
   font-weight: normal;
-}
-
-.strikeout:before {
-  content: "";
-  padding-right: 15px;
 }
