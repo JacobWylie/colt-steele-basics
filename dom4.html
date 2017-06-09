@@ -2,17 +2,14 @@
 <html>
 <head>
 	<title></title>
-	<style type="text/css">
-		button {padding:10px;border-radius:5px;background-color:black;color:white;outline:none;border:none;cursor:pointer;font-size:16px;}	
-		input {padding:10px;outline:none;font-size:18px;text-align:center;border-radius:5px;}	
-	</style>
+	<link rel="stylesheet" type="text/css" href="dom4.css">
 </head>
-<body style="text-align:center;font-size:25px;font-family:'Helvetica';margin-top:100px;background:lightgrey;">
-
-	<h1><span id="playerOneScore">0</span> to <span id="playerTwoScore">0</span></h1>
+<body>
+	<h1>Score Keeper</h1>
 	<div id="winnerBanner"></div>
+	<h1><span id="playerOneScore">0</span> to <span id="playerTwoScore">0</span></h1>
 	<p>Playing to: <span id="scoreLimitDisplay">Set Limit</span></p>
-	<input type="number" name="scoreLimit" min="0">
+	<input type="number" name="scoreLimit" min="0" placeholder="Set Limit Here">
 	<br><br>
 	<button id="playerOneButton">Player One</button>
 	<button id="playerTwoButton">Player Two</button>
