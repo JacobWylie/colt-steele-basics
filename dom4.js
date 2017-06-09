@@ -29,8 +29,19 @@ const winnerDisplay = () => {
 	    }, 300);
 }
 
+const reset = () => {
+	playerOneCounter = 0
+	playerTwoCounter = 0
+	playerOneScore.innerHTML = playerOneCounter;
+	playerTwoScore.innerHTML = playerTwoCounter; 
+	winnerBanner.innerHTML = '';
+	playerOneScore.style.color = 'black';
+	playerTwoScore.style.color = 'black';
+	enableButtons();
+}
+
 const disableButtons = () => {
-	playerOneButton.disabled = true;
+	playerOneButton.disabled = true; 
 	playerTwoButton.disabled = true;
 }
 
@@ -41,12 +52,13 @@ const enableButtons = () => {
 
 // BUTTON FUNCTIONALITY
 
-scoreLimit.addEventListener('input', () => {
-	if (scoreLimit.value >= 0) {
-		if (scoreLimit.value === "0") {
+scoreLimit.addEventListener('input', function() {
+	if (this.value >= 0) {
+		if (this.value === "0") {
 			scoreLimitDisplay.innerHTML = "Set Limit"
 		} else {
-			scoreLimitDisplay.innerHTML = scoreLimit.value;
+			scoreLimitDisplay.innerHTML = this.value;
+			reset();
 		}
 	}
 })
@@ -74,14 +86,7 @@ playerTwoButton.addEventListener('click', () => {
 })
 
 resetButton.addEventListener('click', () => {
-	playerOneCounter = 0; 
-	playerTwoCounter = 0;
-	playerOneScore.innerHTML = playerOneCounter;
-	playerTwoScore.innerHTML = playerTwoCounter;
-	winnerBanner.innerHTML = '';
-	playerOneScore.style.color = 'black';
-	playerTwoScore.style.color = 'black';
-	enableButtons();
+	reset();
 })
 
 
