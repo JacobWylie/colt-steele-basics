@@ -5,8 +5,8 @@ body {
 .header {
 	background-color: #437aa8;
 	color: white;
-	padding-top: 30px;
-	padding-bottom: 15px;
+	padding-top: 50px;
+	padding-bottom: 35px;
 	letter-spacing: .2em;
 }
 
@@ -20,25 +20,20 @@ body {
 	background-color: white;
 }
 
-.menu-text {
-	margin-bottom: 0px;
-	color: #437aa8;
-	font-weight: bold;
-}
-
-.easy,
-.hard {
+.menu-text,
+.notice {
 	text-decoration: none;
 	font-weight: bold;
-	font-size: 16px;
-	margin-right: 10px;
+	font-size: 18px;
 	color: #437aa8;
-	padding: 8px;
+	padding: 7px;
+	margin-bottom: 0px;
 }
-.easy:hover,
-.hard:hover {
+
+.menu-text:hover {
 	background-color: #437aa8;
 	color: white;
+	cursor: pointer;
 }
 
 .main {
@@ -54,7 +49,7 @@ body {
 .hideSquare {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s 1s, opacity 1s linear;
+  transition: visibility 0s .6s, opacity .6s linear;
 }
 
 @media (max-width: 992px) {
