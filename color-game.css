@@ -10,6 +10,12 @@ body {
 	letter-spacing: .2em;
 }
 
+.rgbDisplay {
+	text-decoration: none;
+	font-size: 2.5rem;
+	font-weight: normal;
+}
+
 .menu {
 	background-color: white;
 }
@@ -20,7 +26,8 @@ body {
 	font-weight: bold;
 }
 
-span {
+.easy,
+.hard {
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 16px;
@@ -28,7 +35,8 @@ span {
 	color: #437aa8;
 	padding: 8px;
 }
-span:hover {
+.easy:hover,
+.hard:hover {
 	background-color: #437aa8;
 	color: white;
 }
@@ -41,6 +49,12 @@ span:hover {
 	border-radius: 35px;
 	margin: 1.66%;
 	padding-bottom: 20%;
+}
+
+.hideSquare {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
 }
 
 @media (max-width: 992px) {
