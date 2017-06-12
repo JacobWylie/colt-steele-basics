@@ -22,10 +22,29 @@ const generateRandomColors = (num) => {
 let colors = generateRandomColors(6);
 
 // select winning color from array
-const winningColor = colors[Math.floor(Math.random() * colors.length)];
+let winningColor = colors[Math.floor(Math.random() * colors.length)];
 
 //display winning color rgb value in header
 rgbDisplay.textContent = winningColor;
+
+// newColors button refresh
+newColors.addEventListener('click', () => {
+	// generate new colors
+	colors = generateRandomColors(6);
+	//pick a new random color
+	winningColor = colors[Math.floor(Math.random() * colors.length)];
+	//display winning color rgb value in header
+	rgbDisplay.textContent = winningColor;
+	// change colors of squares
+	for(i = 0; i < squares.length; i++) {
+		// add colors to squares
+		squares[i].style.backgroundColor = colors[i];
+		squares[i].classList.remove('hideSquare');
+	}
+	header.style.backgroundColor = '#437aa8';
+	footer.style.backgroundColor = '#437aa8';
+	newColors.textContent = 'NEW COLORS';
+})
 
 // loop through color squares
 for(i = 0; i < squares.length; i++) {
@@ -52,5 +71,7 @@ for(i = 0; i < squares.length; i++) {
 		}
 	})	
 }
+
+
 
 

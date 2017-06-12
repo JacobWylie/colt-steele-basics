@@ -24,10 +24,21 @@ body {
 .notice {
 	text-decoration: none;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 16px;
 	color: #437aa8;
-	padding: 7px;
 	margin-bottom: 0px;
+	background-color: white;
+	border-radius: 10px;
+	outline: none;
+}
+
+.menu-text:focus {
+	outline: none;
+}
+
+.difficulty:focus {
+	background-color: #437aa8;
+	color: white;
 }
 
 .menu-text:hover {
@@ -50,6 +61,10 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s .6s, opacity .6s linear;
+}
+
+.navbar {
+	background-color: #437aa8;
 }
 
 @media (max-width: 992px) {
