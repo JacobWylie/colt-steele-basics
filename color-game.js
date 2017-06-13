@@ -44,6 +44,7 @@ newColors.addEventListener('click', () => {
 	header.style.backgroundColor = '#437aa8';
 	footer.style.backgroundColor = '#437aa8';
 	newColors.textContent = 'NEW COLORS';
+	notice.textContent = 'Guess the color';
 })
 
 // loop through color squares
@@ -58,7 +59,7 @@ for(i = 0; i < squares.length; i++) {
 		// compare color to winningColor
 		if (clickedColor === winningColor) {
 			notice.textContent = 'GREAT JOB!';
-			newColors.textContent = 'TRY AGAIN?';
+			newColors.textContent = 'PLAY AGAIN?';
 			header.style.backgroundColor = winningColor;
 			footer.style.backgroundColor = winningColor;
 			squares.forEach(squares => {
