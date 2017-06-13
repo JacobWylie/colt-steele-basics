@@ -1,3 +1,6 @@
+let difficulty = 6;
+let colors = [];
+let winningColor;
 const squares = document.querySelectorAll('.square');
 const rgbDisplay = document.querySelector('.rgbDisplay');
 const notice = document.querySelector('.notice');
@@ -5,12 +8,19 @@ const newColors = document.querySelector('.newColors');
 const modeButtons = document.querySelectorAll('.mode')
 const header = document.querySelector('.header');
 const footer = document.querySelector('.navbar');
-let difficulty = 6;
-
 const randomNumber = () => Math.floor(Math.random()*256).toString();
 const randomRGB = () => `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
 
-const generateRandomColors = (num) => {
+init();
+
+function init() {
+	setupModeButtons();
+	setupSquares();
+	refreshColors();
+}
+
+// generates the colors in an array
+function generateRandomColors (num) {
 	// make an array
 	let arr = []
 	// add num random colors to array
@@ -21,12 +31,41 @@ const generateRandomColors = (num) => {
 	return arr;
 }
 
-let colors = generateRandomColors(difficulty);
+function setupSquares () {
+	for(i = 0; i < squares.length; i++) {
+		//add click listeners to squares
+		squares[i].addEventListener('click', function() {
+			// grab color of clicked square
+			let clickedColor = this.style.backgroundColor;
+			// compare color to winningColor
+			if (clickedColor === winningColor) {
+				winner();
+			} else {
+				notice.textContent = "TRY AGAIN!"
+				this.classList.add('hideSquare');
+			}
+		})	
+	}
+}
+
+// difficulty mode buttons functionality
+function setupModeButtons () {
+	for(i = 0; i < modeButtons.length; i++) {
+		modeButtons[i].addEventListener('click', function() {
+			modeButtons[0].classList.remove('selected');
+			modeButtons[1].classList.remove('selected');
+			this.classList.add('selected');
+			this.innerText === 'EASY' ? difficulty = 3: difficulty = 6;
+			refreshColors();
+			return colors = generateRandomColors(difficulty);
+		})
+	}
+}
 
 // refresh the colors
-const refreshColors = () => {
+function refreshColors () {
 	// generate new colors
-	let colors = generateRandomColors(difficulty);
+	colors = generateRandomColors(difficulty);
 	//pick a new random color
 	winningColor = colors[Math.floor(Math.random() * colors.length)];
 	//display winning color rgb value in header
@@ -42,7 +81,6 @@ const refreshColors = () => {
 		} else {
 			squares[i].style.display = 'none';
 		}
-		
 	}
 	header.style.backgroundColor = '#437aa8';
 	footer.style.backgroundColor = '#437aa8';
@@ -51,7 +89,7 @@ const refreshColors = () => {
 }
 
 // when winning color is chosen
-const winner = () => {
+function winner () {
 	notice.textContent = 'GREAT JOB!';
 	newColors.textContent = 'PLAY AGAIN?';
 	header.style.backgroundColor = winningColor;
@@ -64,46 +102,15 @@ const winner = () => {
 	});
 }
 
-// select winning color from array
-let winningColor = colors[Math.floor(Math.random() * colors.length)];
-
-//display winning color rgb value in header
-rgbDisplay.textContent = winningColor;
-
 // newColors button
 newColors.addEventListener('click', refreshColors)
 
-// difficulty mode buttons functionality
-for(i = 0; i < modeButtons.length; i++) {
-	modeButtons[i].addEventListener('click', function() {
-		modeButtons[0].classList.remove('selected');
-		modeButtons[1].classList.remove('selected');
-		this.classList.add('selected');
-		this.innerText === 'EASY' ? difficulty = 3: difficulty = 6;
-		refreshColors();
-		return colors = generateRandomColors(difficulty);
-	})
-}
 
-// loop through color squares
-for(i = 0; i < squares.length; i++) {
-	// add initial colors to squares
-	squares[i].style.backgroundColor = colors[i];
-	squares[i].style.transition = 'all .6s';
 
-	//add click listeners to squares
-	squares[i].addEventListener('click', function() {
-		// grab color of clicked square
-		let clickedColor = this.style.backgroundColor;
-		// compare color to winningColor
-		if (clickedColor === winningColor) {
-			winner();
-		} else {
-			notice.textContent = "TRY AGAIN!"
-			this.classList.add('hideSquare');
-		}
-	})	
-}
+
+
+
+
 
 
 
