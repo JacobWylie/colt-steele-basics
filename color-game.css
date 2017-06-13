@@ -39,6 +39,8 @@ body {
 .selected {
 	background-color: #437aa8;
 	color: white;
+	cursor: not-allowed;
+    pointer-events: none;
 }
 
 .menu-text:hover {

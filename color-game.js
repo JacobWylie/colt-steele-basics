@@ -6,7 +6,7 @@ const easy = document.querySelector('.easy');
 const hard = document.querySelector('.hard');
 const header = document.querySelector('.header');
 const footer = document.querySelector('.navbar');
-let value = 6;
+let difficulty = 6;
 
 const randomNumber = () => Math.floor(Math.random()*256).toString();
 const randomRGB = () => `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
@@ -22,7 +22,7 @@ const generateRandomColors = (num) => {
 	return arr;
 }
 
-let colors = generateRandomColors(6);
+let colors = generateRandomColors(difficulty);
 
 // select winning color from array
 let winningColor = colors[Math.floor(Math.random() * colors.length)];
@@ -34,32 +34,32 @@ rgbDisplay.textContent = winningColor;
 easy.addEventListener('click', () => {
 	easy.classList.add('selected');
 	hard.classList.remove('selected');
-	
-	colors = generateRandomColors(3);
+	difficulty = 3
+	colors = generateRandomColors(difficulty);
 	for (i=3; i<6; i++) {
 		squares[i].style.display = 'none';
 	}
 	refreshColors();
-	return value = 3;
+	return difficulty;
 })
 
 // hard button function
 hard.addEventListener('click', () => {
 	hard.classList.add('selected');
 	easy.classList.remove('selected');
-	
-	colors = generateRandomColors(6);
+	difficulty = 6
+	colors = generateRandomColors(difficulty);
 	for (i=3; i<6; i++) {
 		squares[i].style.display = 'initial';
 	}
 	refreshColors();
-	return value = 6
+	return difficulty;
 })
 
 // newColors button refresh
 newColors.addEventListener('click', refreshColors = () => {
 	// generate new colors
-	let colors = generateRandomColors(value);
+	let colors = generateRandomColors(difficulty);
 	//pick a new random color
 	winningColor = colors[Math.floor(Math.random() * colors.length)];
 	//display winning color rgb value in header
