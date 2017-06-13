@@ -68,6 +68,7 @@ newColors.addEventListener('click', refreshColors = () => {
 	for(i = 0; i < squares.length; i++) {
 		// add colors to squares
 		squares[i].style.backgroundColor = colors[i];
+		squares[i].style.transition = 'all .6s';
 		squares[i].classList.remove('hideSquare');
 	}
 	header.style.backgroundColor = '#437aa8';
@@ -80,6 +81,7 @@ newColors.addEventListener('click', refreshColors = () => {
 for(i = 0; i < squares.length; i++) {
 	// add initial colors to squares
 	squares[i].style.backgroundColor = colors[i];
+	squares[i].style.transition = 'all .6s';
 
 	//add click listeners to squares
 	squares[i].addEventListener('click', function() {
@@ -90,7 +92,9 @@ for(i = 0; i < squares.length; i++) {
 			notice.textContent = 'GREAT JOB!';
 			newColors.textContent = 'PLAY AGAIN?';
 			header.style.backgroundColor = winningColor;
+			header.style.transition = 'all .6s';
 			footer.style.backgroundColor = winningColor;
+			footer.style.transition = 'all .6s';
 			squares.forEach(squares => {
 				squares.style.backgroundColor = winningColor;
 				squares.classList.remove('hideSquare');
