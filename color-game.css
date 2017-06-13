@@ -1,5 +1,6 @@
 body {
 	background-color: #201f21;
+	font-family: 'Helvetica Neue', sans-serif;
 }
 
 .header {
@@ -30,10 +31,14 @@ body {
 	background-color: white;
 	border-radius: 10px;
 	outline: none;
+	letter-spacing: .07em;
 }
 
 .menu-text:focus {
 	outline: none;
+}
+button {
+	transition: all .3s;
 }
 
 .selected {
@@ -66,7 +71,14 @@ body {
 }
 
 .navbar {
-	background-color: #437aa8;
+	background-color: #437aa8;;
+}
+
+.navbar-brand {
+	color: white;
+	font-size: 14px;
+	font-weight: 200;
+	letter-spacing: .12em;
 }
 
 @media (max-width: 992px) {
