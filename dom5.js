@@ -3,20 +3,11 @@ const list = document.querySelector('ul')
 const input = document.querySelector('input');
 const addButton = document.querySelector('.addButton');
 
-//deletes list item
-function deleter () {
-  let deleteButton = document.querySelectorAll('.close');
-  deleteButton.forEach( deleteButton => {
-    deleteButton.addEventListener('click', function() {
-     this.parentNode.remove();
-    })
-  })
-}
 
 // Creates new todo list items
-addButton.addEventListener('click', () => {
-	if (input.value.length !== 0) {
-		const newItem = document.createElement('li');
+function addItem () {
+  	if (input.value.length !== 0) {
+		  const newItem = document.createElement('li');
 		newItem.addEventListener('mouseover', function() {
 	    this.classList.toggle('mouseOver');
 	  })
@@ -32,8 +23,25 @@ addButton.addEventListener('click', () => {
 		input.value = "";
 	}
   deleter();
-})
+}
 
+// Delete list items
+function deleter () {
+  let deleteButton = document.querySelectorAll('.close');
+  deleteButton.forEach( deleteButton => {
+    deleteButton.addEventListener('click', function() {
+     this.parentNode.remove();
+    })
+  })
+}
+
+addButton.addEventListener('click', addItem);
+
+input.addEventListener('keyup', e => {
+  if (e.which === 13) {
+    addItem();
+  }
+});
 
 // For Example todo items already in list
 todo.forEach( todo => {
