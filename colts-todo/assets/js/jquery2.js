@@ -15,7 +15,7 @@ $('ul').on('click', 'span', function(e) {
 $('input[type="text"]').keypress(function(e) {
 	// adds to list with enter key and input text required
 	if(e.which === 13 && $(this).val() !== '') {
-		$('ul').append(`<li><i class="fa fa-trash-o"></i> ${$(this).val()}</li>`)
+		$('ul').append(`<li><span><i class="fa fa-trash-o"></i></span> ${$(this).val()}</li>`)
 		$(this).val('');
 	}
 })
