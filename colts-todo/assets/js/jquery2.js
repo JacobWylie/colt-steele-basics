@@ -22,5 +22,5 @@ $('input[type="text"]').keypress(function(e) {
 
 // Toggle add item with write button
 $('.fa-pencil-square-o').click( () => {
-	$('input').toggle();
+	$('input').fadeToggle();
 })
