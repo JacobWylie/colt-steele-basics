@@ -1,0 +1,22 @@
+.todo {
+	padding-top: 30px;
+	width: 25%;
+	margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: -15px;
+}
+
+.delete:before {
+  content: "x";
+  padding-right: 10px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+li {
+  list-style: none;
+  padding: 5px;
+  font-size: 26px;a
+}
