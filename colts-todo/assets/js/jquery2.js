@@ -4,7 +4,7 @@ $('ul').on('click', 'li', function () {
 })
 
 // Click X to delete todo item
-$('ul').on('click', '.delete', function(e) {
+$('ul').on('click', 'span', function(e) {
 	e.stopPropagation();
 	$(this).parent().fadeOut(500, function() {
 		$(this).remove();
@@ -13,8 +13,14 @@ $('ul').on('click', '.delete', function(e) {
 
 // Add item to Todo list
 $('input[type="text"]').keypress(function(e) {
-	if(e.which === 13) {
-		$('ul').append(`<li><span class='delete'>X</span> ${$(this).val()}</li>`)
+	// adds to list with enter key and input text required
+	if(e.which === 13 && $(this).val() !== '') {
+		$('ul').append(`<li><i class="fa fa-trash-o"></i> ${$(this).val()}</li>`)
 		$(this).val('');
 	}
+})
+
+// Toggle add item with write button
+$('.fa-pencil-square-o').click( () => {
+	$('input').toggle();
 })
