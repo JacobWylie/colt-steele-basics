@@ -1,0 +1,63 @@
+body {
+  font-size: 20px;
+  font-family: 'Helvetica';
+  padding: 30px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+p {
+  margin-left: 20px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  margin-left: 95px;
+}
+
+.addButton {
+  display: block;
+  margin-top: 10px;
+  padding: 8px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-left: 95px;
+}
+
+ul {
+  list-style: none;
+  margin-left: 50px;
+}
+
+li {
+  padding: 3px;
+  cursor: crosshair;
+}
+
+.mouseOver {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.strikeout {
+  text-decoration: line-through;
+  font-style: italic;
+  opacity: 0.5;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.close:before {
+  content: "✖";
+  padding:0.5em;
+  cursor: pointer;
+  font-size: 14px;
+}
+

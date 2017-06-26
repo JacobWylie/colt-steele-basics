@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>JS Methods</h1>
+
+	<p>Topics:</p>
+
+	<ul>
+		<li>Adding methods to an object</li>
+		<li>Namespacing</li>
+		<li>The Keyword <em>this</em></li>
+	</ul>
+
+	<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">let</span> object <span style="color: #666666">=</span> {
+	name<span style="color: #666666">:</span> <span style="color: #BA2121">&quot;chuck&quot;</span>,
+	age<span style="color: #666666">:</span> <span style="color: #666666">45</span>,
+	isCool<span style="color: #666666">:</span> <span style="color: #008000; font-weight: bold">false</span>,
+	friends<span style="color: #666666">:</span> [<span style="color: #BA2121">&quot;bob&quot;</span>, <span style="color: #BA2121">&quot;tina&quot;</span>],
+	add<span style="color: #666666">:</span> (x, y) <span style="color: #666666">=&gt;</span> {
+		<span style="color: #008000; font-weight: bold">return</span> x <span style="color: #666666">+</span> y;
+	}
+}
+
+object.add(<span style="color: #666666">10</span>, <span style="color: #666666">5</span>); <span style="color: #408080; font-style: italic">// 15</span>
+</pre></td></tr></table></div>
+<br><br>
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">let</span> comments <span style="color: #666666">=</span> {};
+
+comments.data <span style="color: #666666">=</span> [<span style="color: #BA2121">&quot;good Job&quot;</span>, <span style="color: #BA2121">&quot;Bye&quot;</span>, <span style="color: #BA2121">&quot;Lame&quot;</span>];
+
+comments.print <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">function</span>() {
+	<span style="color: #008000; font-weight: bold">this</span>.data.forEach( el <span style="color: #666666">=&gt;</span> console.log(el))
+}
+</pre></td></tr></table></div>
+
+</body>
+</html>

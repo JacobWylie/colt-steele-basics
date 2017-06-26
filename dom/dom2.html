@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Paste code into JS console at <a href="https://www.google.de">www.google.de</a></h1>
+
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">const</span> googleLogo <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;div[title=&quot;Google&quot;]&#39;</span>);
+<span style="color: #008000; font-weight: bold">const</span> input <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;input[value=&quot;Google Search&quot;]&#39;</span>);
+<span style="color: #008000; font-weight: bold">const</span> subtext <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;.logo-subtext&#39;</span>);
+<span style="color: #008000; font-weight: bold">const</span> links <span style="color: #666666">=</span> <span style="color: #008000">document</span>.querySelectorAll(<span style="color: #BA2121">&#39;a&#39;</span>);
+
+googleLogo.style.background <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;url(&quot;http://logos-download.com/wp-content/uploads/2016/02/bing-tm-logo.png&quot;)&#39;</span>;
+
+googleLogo.addEventListener(<span style="color: #BA2121">&#39;mouseover&#39;</span>, () <span style="color: #666666">=&gt;</span> {
+	<span style="color: #408080; font-style: italic">// googleLogo.classList.toggle(&#39;googleLogo&#39;);</span>
+	<span style="color: #008000; font-weight: bold">if</span> (googleLogo.style.border <span style="color: #666666">===</span> <span style="color: #BA2121">&#39;5px solid black&#39;</span>) {
+		googleLogo.style.border <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;none&#39;</span>;
+	} <span style="color: #008000; font-weight: bold">else</span> {
+		googleLogo.style.border <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;5px solid black&#39;</span>;
+	}
+})
+
+input.value <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Feeling lucky punk?&quot;</span>;
+
+subtext.innerHTML <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;Welcome to Bing!&#39;</span>;
+subtext.style.color <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;black&quot;</span>
+
+links.forEach( links <span style="color: #666666">=&gt;</span> {
+	links.setAttribute(<span style="color: #BA2121">&#39;href&#39;</span>, <span style="color: #BA2121">&#39;http://www.bing.com&#39;</span>);
+})
+</pre></td></tr></table></div>
+
+<script type="text/javascript" src="dom2.js"></script>
+</body>
+</html>

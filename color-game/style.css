@@ -1,0 +1,89 @@
+body {
+	background-color: #201f21;
+	font-family: 'Helvetica Neue', sans-serif;
+}
+
+.header {
+	background-color: #437aa8;
+	color: white;
+	padding-top: 50px;
+	padding-bottom: 35px;
+	letter-spacing: .2em;
+}
+
+.rgbDisplay {
+	text-decoration: none;
+	font-size: 2.5rem;
+	font-weight: normal;
+}
+
+.menu {
+	background-color: white;
+}
+
+.menu-text,
+.notice {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+	color: #437aa8;
+	margin-bottom: 0px;
+	background-color: white;
+	border-radius: 10px;
+	outline: none;
+	letter-spacing: .07em;
+}
+
+.menu-text:focus {
+	outline: none;
+}
+button {
+	transition: all .3s;
+}
+
+.selected {
+	background-color: #437aa8;
+	color: white;
+	cursor: not-allowed;
+    pointer-events: none;
+}
+
+.menu-text:hover {
+	background-color: #437aa8;
+	color: white;
+	cursor: pointer;
+}
+
+.main {
+	margin-top: 30px;
+}
+
+.square {
+	border-radius: 35px;
+	margin: 1.66%;
+	padding-bottom: 20%;
+	cursor: pointer;
+}
+
+.hideSquare {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .6s, opacity .6s linear;
+}
+
+.navbar {
+	background-color: #437aa8;;
+}
+
+.navbar-brand {
+	color: white;
+	font-size: 14px;
+	font-weight: 200;
+	letter-spacing: .12em;
+}
+
+@media (max-width: 992px) {
+	.square {
+		padding-bottom: 35%
+	}
+}

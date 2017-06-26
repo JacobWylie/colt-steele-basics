@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// Create your own forEach() </span>
+
+arr <span style="color: #666666">=</span> [<span style="color: #666666">5</span>, <span style="color: #666666">6</span>, <span style="color: #666666">7</span>, <span style="color: #666666">2</span>, <span style="color: #666666">1</span>, <span style="color: #666666">4</span>];
+
+<span style="color: #008000; font-weight: bold">const</span> myForEach <span style="color: #666666">=</span> (arr, func) <span style="color: #666666">=&gt;</span> {
+	<span style="color: #008000; font-weight: bold">for</span>(i<span style="color: #666666">=0</span>; i <span style="color: #666666">&lt;</span> arr.length; i<span style="color: #666666">++</span>) {
+		func(arr[i]);
+	}
+}
+
+myForEach(arr, numbers <span style="color: #666666">=&gt;</span> {
+	console.log(number);
+})
+
+
+<span style="color: #408080; font-style: italic">///////////////////////////////////////////</span>
+
+<span style="color: #008000">Array</span>.prototype.myForEach <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">function</span>(func) {
+	<span style="color: #008000; font-weight: bold">for</span>(<span style="color: #008000; font-weight: bold">var</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> <span style="color: #008000; font-weight: bold">this</span>.length; i<span style="color: #666666">++</span>) {
+		func(<span style="color: #008000; font-weight: bold">this</span>[i]);
+	}
+}
+
+arr.myForEach(console.log);
+
+<span style="color: #408080; font-style: italic">// or</span>
+
+arr.myForEach( num <span style="color: #666666">=&gt;</span> console.log(num <span style="color: #666666">*</span> <span style="color: #666666">10</span>));
+</pre></td></tr></table></div>
+
+</body>
+</html>
