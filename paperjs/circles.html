@@ -7,17 +7,19 @@
 <!-- Define inlined PaperScript associate it with myCanvas -->
 <script type="text/paperscript" canvas="myCanvas">
 
-	x = 0;
-	y = 0;
+	function onKeyDown(e){
+			x = Math.floor(Math.random() * 1000) + 10 
+			y = Math.floor(Math.random() * 1200) + 10
+			color = "#"+((1<<24)*Math.random()|0).toString(16)
+			new Path.Circle(new Point(x, y), 20).fillColor = color
+		}
 
-	for(i = 0; i < 100; i++) {
+	// for(i = 0; i < 100; i++) {
 
-		x = Math.floor(Math.random() * 1000) + 10 
-		y = Math.floor(Math.random() * 1200) + 10 
+	// 	x = Math.floor(Math.random() * 1000) + 10 
+	// 	y = Math.floor(Math.random() * 1200) + 10 
 
-		var path = new Path.Circle(new Point(x, y), 10);
-
-		project.activeLayer.lastChild.fillColor = 'purple'; 
+	// 	new Path.Circle(new Point(x, y), 10).fillColor = 'purple'; 
 
 <!-- 		// x += 100;
 
@@ -25,12 +27,22 @@
 		//	y += 100;
 		//	x = 0;
 		// } -->
+
+
+<!-- 		// or
+
+		// for(x = 0; x < 1000; x += 100) {
+		//   for(y = 0; y < 1000; y += 100) {
+		//		new Path.Circle(new Point(x, y), 10).fillColor = 'purple';
+		//	}
+		// } -->
 		
-	}
+	// }
 
 </script>
 </head>
 <body>
+	<h3>Press Lots of Keys</h3>
 	<canvas id="myCanvas" resize></canvas>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- Load the Paper.js library -->
+	<script type="text/javascript" src="dist/paper-full.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Define inlined PaperScript associate it with myCanvas -->
+	<script type="text/paperscript" canvas="myCanvas">
+
+		function onKeyDown(e){
+			x = Math.floor(Math.random() * 1000) + 10 
+			y = Math.floor(Math.random() * 1200) + 10
+			color = "#"+((1<<24)*Math.random()|0).toString(16)
+			new Path.Circle(new Point(x, y), 20).fillColor = color
+		}
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>

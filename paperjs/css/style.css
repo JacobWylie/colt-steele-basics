@@ -10,3 +10,10 @@ canvas {
 	background-color: black;
 }
 
+h3	{
+	background-color: black;
+	color: white;
+	margin: 0;
+	font-family: 'Helvetica';
+}
+
