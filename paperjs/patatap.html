@@ -9,11 +9,28 @@
 	<!-- Define inlined PaperScript associate it with myCanvas -->
 	<script type="text/paperscript" canvas="myCanvas">
 
+		var circles = [];
+
 		function onKeyDown(e){
-			x = Math.floor(Math.random() * 1000) + 10 
-			y = Math.floor(Math.random() * 1200) + 10
-			color = "#"+((1<<24)*Math.random()|0).toString(16)
-			new Path.Circle(new Point(x, y), 20).fillColor = color
+			// random point on x axis
+			var x = Math.floor(Math.random() * view.size.width) + 1;
+			//random point on y axix
+			var y = Math.floor(Math.random() * view.size.height) + 1;
+			// random hex color
+			var color = "#"+((1<<24)*Math.random()|0).toString(16);
+			// create new circle
+			var newCircle = new Path.Circle(new Point(x, y), 500);
+			// assign circle random color
+			newCircle.fillColor = color;
+			// push new circle into circles array
+			circles.push(newCircle);
+		}
+
+		function onFrame() {
+			for(i = 0; i < circles.length; i++) {
+				circles[i].fillColor.hue += 1;
+				circles[i].scale(.995);
+			}
 		}
 
 	</script>
