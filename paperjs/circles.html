@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="dist/paper-full.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/paperscript" canvas="myCanvas">
+
+		var circles = [];
+
+		function onKeyDown(e){
+			// random point on x axis
+			var x = Math.floor(Math.random() * view.size.width) + 1;
+			//random point on y axix
+			var y = Math.floor(Math.random() * view.size.height) + 1;
+			// random hex color
+			var color = "#"+((1<<24)*Math.random()|0).toString(16);
+			// create new circle
+			var newCircle = new Path.Circle(new Point(x, y), 500);
+			// assign circle random color
+			newCircle.fillColor = color;
+			// push new circle into circles array
+			circles.push(newCircle);
+		}
+
+		function onFrame() {
+			for(i = 0; i < circles.length; i++) {
+				circles[i].fillColor.hue += 1;
+				circles[i].scale(.995);
+			}
+		}
+
+	// for(i = 0; i < 100; i++) {
+
+	// 	x = Math.floor(Math.random() * 1000) + 10 
+	// 	y = Math.floor(Math.random() * 1200) + 10 
+
+	// 	new Path.Circle(new Point(x, y), 10).fillColor = 'purple'; 
+
+<!-- 		// x += 100;
+
+		// if( x === 1000) {
+		//	y += 100;
+		//	x = 0;
+		// } -->
+
+
+<!-- 		// or
+
+		// for(x = 0; x < 1000; x += 100) {
+		//   for(y = 0; y < 1000; y += 100) {
+		//		new Path.Circle(new Point(x, y), 10).fillColor = 'purple';
+		//	}
+		// } -->
+		
+	// }
+
+</script>
+</head>
+<body>
+	<h3>Press Lots of Keys</h3>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
