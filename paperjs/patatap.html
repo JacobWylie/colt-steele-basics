@@ -6,12 +6,35 @@
 	<!-- Load the Paper.js library -->
 	<script type="text/javascript" src="dist/paper-full.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="dist/howler.min.js"></script>
+	
+	<!--Howler JS -->
+	<script type="text/javascript">
+		var sound1 = new Howl({
+  			src: ['sounds/bubbles.mp3']
+			});
+
+		var sound2 = new Howl({
+  			src: ['sounds/clay.mp3']
+			});
+
+	</script>
+
 	<!-- Define inlined PaperScript associate it with myCanvas -->
 	<script type="text/paperscript" canvas="myCanvas">
 
 		var circles = [];
 
 		function onKeyDown(e){
+
+			if (e.key === 'a') {
+				sound1.play();	
+			}
+
+			if (e.key === 's') {
+				sound2.play();
+			}
+
 			// random point on x axis
 			var x = Math.floor(Math.random() * view.size.width) + 1;
 			//random point on y axix
@@ -24,12 +47,15 @@
 			newCircle.fillColor = color;
 			// push new circle into circles array
 			circles.push(newCircle);
+
+			
+			
 		}
 
 		function onFrame() {
 			for(i = 0; i < circles.length; i++) {
 				circles[i].fillColor.hue += 1;
-				circles[i].scale(.995);
+				circles[i].scale(.985);
 			}
 		}
 
