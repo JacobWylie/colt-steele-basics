@@ -169,6 +169,11 @@
 			for(i = 0; i < circles.length; i++) {
 				circles[i].fillColor.hue += 1;
 				circles[i].scale(.985);
+				// removes circles from array when they dissapear
+				if(circles[i].area < 1){
+      				circles[i].remove();
+      				circles.splice(i, 1);
+    			}
 			}
 		}
 
