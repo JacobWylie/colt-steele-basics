@@ -1,16 +1,23 @@
 <h1>Here are Your Results</h1>
+<a href="/">
+	<button>Back</button>
+</a>
 
 <ul>
-<% movies.Search.forEach( movie => { %>
-	<li><%= movie.Title %></li>
-<% }) %>
+	<% movies.Search.forEach( movie => { %>
+		<br>
+		<li style="list-style: none;">
+			<p><strong>Movie Title:</strong> <%= movie.Title %></p>
+			<p><strong>Year Released:</strong> <%= movie.Year %></p>
+			<img src="<%= movie.Poster %>">
+		</li>
+	<% }) %>
 </ul>
-
 <br>
-<form action="/movieSearch" method="POST">
-	<input type="text" name="movieInput" placeholder="Enter Keyword Here">
-	<BUTTON>Search for Movies</BUTTON>
-</form>
+<a href="/">
+	<button>Back</button>
+</a>
+
 
 
 

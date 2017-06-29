@@ -9,17 +9,20 @@ app.get('/', (req, res) => {
 });
 
 
-// API Results
+// API Results from Input Form
 app.get('/results', (req, res) => {
-	request('http://omdbapi.com/?s=michigan&apikey=thewdb', function (error, response, body) {
-	if(!error && response.statusCode === 200) {
-		let movies = JSON.parse(body); 
-		res.render("results", {movies: movies})
-	} else {
-		// Error Page
-		res.redirect('error')
-	}
-});
+	let userKeyword = req.query.search;
+	let url = `http://omdbapi.com/?s=${userKeyword}&apikey=thewdb`;
+
+	request(url, function (error, response, body) {
+		if(!error && response.statusCode === 200) {
+			let movies = JSON.parse(body); 
+			res.render("results", {movies: movies})
+		} else {
+			// Error Page
+			res.redirect('error')
+		}
+	});
 })
 
 
