@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+
+<h1>Posts w/ for Loop</h1>
+<ul>
+	<% for (i=0; i < posts.length; i++) { %>
+		<li>
+			<a href="">Title: <%= posts[i].title %> | Author: <%= posts[i].author %></a>
+		</li>
+	<% } %>
+</ul>
+
+<h1>Posts w/ forEach() Loop</h1>
+<ul>
+	<% posts.forEach( post => { %>
+		<li>
+			<a href="">Title: <%= post.title %> | Author: <%= post.author %></a>
+		</li>
+	<% }) %>
+</ul>
+
+<% include ../partials/footer %>
